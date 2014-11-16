@@ -1,0 +1,15 @@
+{
+  "name": "angle",
+  "description": "A basic PM app",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mkeblx/angle",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.3.x",
+    "angular-route": "1.3.x",
+    "normalize.css": "~3.0.2",
+    "angularfire": "~0.8.2"
+  },
+  "devDependencies": {}
+}
