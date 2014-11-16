@@ -1,10 +1,12 @@
 'use strict';
 
-app.controller('ProjectCtrl',
-  ['$scope','$firebase','projects',
-  function($scope, $firebase, $projects) {
+app.controller('ProjectViewCtrl',
+  ['$scope','$routeParams','$firebase','projects',
+  function($scope, $routeParams, $firebase, $projects) {
 
-    $scope.projects = $projects;
+  	$scope.projectId = $routeParams.projectId;
+
+  	$scope.project = $projects[$scope.projectId];
 
     $scope.addProject = function() {
       var name = $scope.projectName.trim();
@@ -28,7 +30,7 @@ app.controller('ProjectCtrl',
       var text = project.name.trim();
 
       var newName = window.prompt('New project name: ', text);
-      if (!newName || !newName.length)
+      if (!newName.length)
         return;
 
       project.name = newName;

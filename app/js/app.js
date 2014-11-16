@@ -1,7 +1,27 @@
-// app 
+// app
 'use strict';
 
-var app = angular.module('angleApp', ['firebase']);
+var app = angular.module('angleApp', ['ngRoute','firebase']);
+
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/projects', {
+        templateUrl: 'partials/projects.html',
+        controller: 'ProjectCtrl'
+      }).
+      when('/projects/:projectId', {
+        templateUrl: 'partials/project.html',
+        controller: 'ProjectViewCtrl'
+      }).
+      when('/todos', {
+        templateUrl: 'partials/todos.html',
+        controller: 'TodoCtrl'
+      }).
+      otherwise({
+        redirectTo: '/projects'
+      });
+  }]);
 
 var url = 'https://boiling-fire-3960.firebaseio.com';
 

@@ -1,0 +1,15 @@
+<div class="section" ng-controller="ProjectCtrl">
+  <ul class="unstyled">
+    <li ng-repeat="(id, project) in projects">
+      <a href="#/projects/{{ id }}" class="">{{ project.name }}</a> <span ng-click="editProject(id)">edit</span>
+    </li>
+  </ul>
+
+  <form ng-submit="addProject()">
+    <input type="text" ng-model="projectName" size="30"
+           placeholder="project name">
+    <input type="text" ng-model="projectDesc" size="30"
+           placeholder="project desc">
+    <input class="btn-primary" type="submit" value="add">
+  </form>
+</div>

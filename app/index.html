@@ -9,42 +9,14 @@
 </head>
 <body ng-cloak>
 
-  <h2>Angle PM</h2>
-
   <div id="container">
+    <h2>Angle PM</h2>
 
-  <div class="section" ng-controller="TodoCtrl">
-      <span>{{remaining()}} of {{todos.length}} remaining</span>
-      [ <a href="" ng-click="archive()">archive</a> ]
-      <ul class="unstyled">
-        <li ng-repeat="(id, todo) in todos">
-          <input type="checkbox" ng-model="todo.done" ng-change="toggleCompleted(id)">
-          <span class="done-{{todo.done}}">{{ todo.text }}</span> <span ng-click="editTodo(id)">edit</span>
-        </li>
-      </ul>
+    <div>
+      <a href="#/projects">Projects</a> <a href="#/todos">Todos</a>
+    </div>
 
-      <form ng-submit="addTodo()">
-        <input type="text" ng-model="todoText" size="30"
-               placeholder="todo text">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
-  </div>
-
-  <div class="section" ng-controller="ProjectCtrl">
-    <ul class="unstyled">
-      <li ng-repeat="(id, project) in projects">
-        <span class="">{{ project.name }}</span> <span ng-click="editProject(id)">edit</span>
-      </li>
-    </ul>
-
-    <form ng-submit="addProject()">
-      <input type="text" ng-model="projectName" size="30"
-             placeholder="project name">
-      <input type="text" ng-model="projectDesc" size="30"
-             placeholder="project desc">
-      <input class="btn-primary" type="submit" value="add">
-    </form>
-  </div>
+    <div ng-view></div>
 
   </div>
 
@@ -55,6 +27,7 @@
 
   <script src="js/app.js"></script>
   <script src="js/controllers/ProjectCtrl.js"></script>
+  <script src="js/controllers/ProjectViewCtrl.js"></script>
   <script src="js/controllers/TodoCtrl.js"></script>
 
 </body>

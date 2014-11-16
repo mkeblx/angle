@@ -1,0 +1,16 @@
+<div class="section" ng-controller="TodoCtrl">
+    <span>{{remaining()}} of {{todos.length}} remaining</span>
+    [ <a href="" ng-click="archive()">archive</a> ]
+    <ul class="unstyled">
+      <li ng-repeat="(id, todo) in todos">
+        <input type="checkbox" ng-model="todo.done" ng-change="toggleCompleted(id)">
+        <span class="done-{{todo.done}}">{{ todo.text }}</span> <span ng-click="editTodo(id)">edit</span>
+      </li>
+    </ul>
+
+    <form ng-submit="addTodo()">
+      <input type="text" ng-model="todoText" size="30"
+             placeholder="todo text">
+      <input class="btn-primary" type="submit" value="add">
+    </form>
+</div>
