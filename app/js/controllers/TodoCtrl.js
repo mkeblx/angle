@@ -24,7 +24,7 @@ app.controller('TodoCtrl',
       $scope.todos.$remove(id);
     };
 
-    $scope.edit = function(id) {
+    $scope.editTodo = function(id) {
       var todo = $scope.todos[id];
       var text = todo.text.trim();
 
