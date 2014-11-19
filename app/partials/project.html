@@ -1,6 +1,10 @@
 <div class="section" ng-controller="ProjectCtrl">
 
-  <h2>{{ project.name }}</span> <span ng-click="editProject(projectId)">edit</h2>
+  <div class="header">
+    <h2>{{ project.name }}</h2>
+    <h3>{{ project.desc }}</h3>
+    <span class="btn" ng-click="editProject(projectId)">edit</span>
+  </div>
 
   <p>list of todos here</p>
 

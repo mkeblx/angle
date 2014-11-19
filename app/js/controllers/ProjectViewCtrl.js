@@ -4,9 +4,9 @@ app.controller('ProjectViewCtrl',
   ['$scope','$routeParams','$firebase','projects',
   function($scope, $routeParams, $firebase, $projects) {
 
-  	$scope.projectId = $routeParams.projectId;
+    $scope.projectId = $routeParams.projectId;
 
-  	$scope.project = $projects[$scope.projectId];
+    $scope.project = $projects[$scope.projectId];
 
     $scope.addProject = function() {
       var name = $scope.projectName.trim();
@@ -22,7 +22,7 @@ app.controller('ProjectViewCtrl',
     };
 
     $scope.removeProject = function(id) {
-    	$scope.projects.$remove(id);
+      $scope.projects.$remove(id);
     };
 
     $scope.editProject = function(id) {
