@@ -6,6 +6,8 @@ app.controller('ProjectCtrl',
 
     $scope.projects = $projects;
 
+    $scope.color = function(n){ return app.colors[n % app.colors.length-1]; };
+
     $scope.addProject = function() {
       var name = $scope.projectName.trim();
       var desc = $scope.projectDesc.trim();

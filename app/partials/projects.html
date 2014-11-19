@@ -1,9 +1,14 @@
-<div class="section" ng-controller="ProjectCtrl">
-  <ul class="unstyled">
-    <li ng-repeat="(id, project) in projects">
-      <a href="/projects/{{ id }}" class="">{{ project.name }}</a> <span ng-click="editProject(id)">edit</span>
-    </li>
-  </ul>
+<div id="projects" class="section" ng-controller="ProjectCtrl" style="position: relative">
+  <div ng-repeat="(id, project) in projects" class="proj u1" style="border-color: {{ color(id) }}">
+    <div class="corner" style="border-top-color: {{ color(id) }}"></div>
+    <a ng-href="/projects/{{ id }}">
+    <div class="content">
+      <div class="title">{{ project.name }}</div>
+      <div class="desc">{{ project.desc }}</div>
+      </div>
+    </div>
+    </a>
+  </div>
 
   <form ng-submit="addProject()">
     <input type="text" ng-model="projectName" size="30"

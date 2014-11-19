@@ -1,4 +1,6 @@
-/* app.css */
+@import url('//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+@import url('//fonts.googleapis.com/css?family=Oswald:300,400,700');
+
 
 html {
 	box-sizing: border-box;
@@ -8,18 +10,248 @@ html {
 	box-sizing: inherit;
 }
 
-body {
-	font-family: sans-serif;
-}
-
-#container {
-	width: 960px;
-	margin: 0 auto;
-	padding: 10px;
-	border: 1px solid black;
-}
-
 .done-true {
   text-decoration: line-through;
   color: gray;
+}
+
+
+/* from nucleus */
+
+/* line 7, sass/style.scss */
+body {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 20px;
+  min-width: 850px;
+}
+
+a { /* MOD */
+	text-decoration: none;
+	color: #000;
+}
+
+/* line 15, sass/style.scss */
+#container {
+  width: 810px;
+  margin: 0 auto;
+}
+
+/* line 22, sass/style.scss */
+#head h1 {
+  font-size: 34px;
+  line-height: 34px;
+  font-weight: 300;
+  margin-top: 0px;
+  margin-bottom: 26px;
+}
+/* line 32, sass/style.scss */
+#head .bread span {
+  cursor: pointer;
+}
+/* line 38, sass/style.scss */
+#head .btn {
+  padding: 8px 12px 13px;
+  border: 1px solid #ddd;
+  font-size: 22px;
+  line-height: 22px;
+}
+
+/* line 46, sass/style.scss */
+#main-container {
+  outline: 1px solid #ddd;
+  position: relative;
+  background-color: #f5f5f5;
+  width: 810px;
+  min-height: 1000px;
+  padding: 10px;
+}
+
+/* projects */
+/* line 61, sass/style.scss */
+.proj {
+  border: 1px solid #333;
+  margin-left: 0px;
+  background-color: #fff;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in;
+  transition: width, height 0.3s ease-in;
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 72, sass/style.scss */
+.proj.u1 {
+  width: 150px;
+  height: 200px;
+}
+
+/* line 77, sass/style.scss */
+.proj.u2 {
+  width: 225px;
+  height: 300px;
+}
+
+/* line 82, sass/style.scss */
+.proj.u3 {
+  width: 300px;
+  height: 400px;
+}
+
+/* line 87, sass/style.scss */
+.proj:hover {
+  cursor: pointer;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* line 92, sass/style.scss */
+.proj:hover .corner {
+  cursor: pointer;
+  border-left-width: 35px;
+  border-top-width: 35px;
+}
+
+/* line 99, sass/style.scss */
+#projects > div .content {
+  padding: 10px;
+  height: 100%; /* MOD */
+}
+
+/* line 103, sass/style.scss */
+.title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #111;
+  margin-bottom: 10px;
+}
+
+/* line 112, sass/style.scss */
+.desc {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* line 119, sass/style.scss */
+.u1 .title {
+  font-size: 18px;
+  line-height: 18px;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+/* line 126, sass/style.scss */
+.u1 .desc {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/* line 131, sass/style.scss */
+.u2 .title {
+  font-size: 22px;
+  line-height: 22px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 138, sass/style.scss */
+.u2 .desc {
+  font-size: 15px;
+  line-height: 21px;
+}
+
+/* line 143, sass/style.scss */
+.corner {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-top-width: 20px;
+  border-top-style: solid;
+  transition: border 0.3s ease-in;
+  float: right;
+}
+
+/* project */
+/* line 157, sass/style.scss */
+.proj-page {
+  background-color: #fff;
+  border: 1px solid #333;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+  min-height: 920px;
+}
+/* line 163, sass/style.scss */
+.proj-page .content {
+  margin: 10px;
+}
+/* line 166, sass/style.scss */
+.proj-page .content h1 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: 400;
+}
+/* line 175, sass/style.scss */
+.proj-page .content h2 {
+  font-size: 20px;
+  line-height: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin: 0px;
+}
+/* line 184, sass/style.scss */
+.proj-page .content p {
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 22px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+/* buttons */
+/* line 197, sass/style.scss */
+.btn {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-weight: 300;
+  transition: background 0.3s ease-in;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 212, sass/style.scss */
+.btn i {
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* line 217, sass/style.scss */
+.btn:hover {
+  cursor: pointer;
+  background-color: #fafafa;
+}
+
+/* line 224, sass/style.scss */
+.loading {
+  margin-left: 3px;
+  margin-bottom: 2px;
+}
+
+/* misc */
+/* line 231, sass/style.scss */
+.pull-right {
+  float: right;
+}
+
+/* line 232, sass/style.scss */
+.pull-left {
+  float: left;
 }
