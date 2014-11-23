@@ -1,0 +1,36 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+
+    "projects": {
+      ".read": true,
+      ".write": true,
+      "$project": {
+        ".write": true,
+        "name": {
+          ".validate": "newData.isString() && newData.val().length <= 64 && newData.val().length > 0"
+        },
+        "desc": {
+          ".validate": "newData.isString()"
+        },
+        "$other": {
+          ".validate": false 
+        }
+      }
+    },
+    "todos": {
+      ".read": true,
+      ".write": true,
+      "$todo": {
+        ".write": true,
+        "text": {
+          ".validate": "newData.isString() && newData.val().length <= 128 && newData.val().length > 0"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}

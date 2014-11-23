@@ -8,23 +8,6 @@ app.controller('ProjectViewCtrl',
 
     $scope.project = $projects[$scope.projectId];
 
-    $scope.addProject = function() {
-      var name = $scope.projectName.trim();
-      var desc = $scope.projectDesc.trim();
-      if (!name.length) {
-        return;
-      }
-
-      var project = { name: name, desc: desc };
-
-      $scope.projects.$add(project);
-      $scope.projectName = '';
-    };
-
-    $scope.removeProject = function(id) {
-      $scope.projects.$remove(id);
-    };
-
     $scope.editProject = function(id) {
       var project = $scope.projects[id];
       var text = project.name.trim();
@@ -36,6 +19,5 @@ app.controller('ProjectViewCtrl',
       project.name = newName;
       $scope.projects.$save(id);
     };
-
 
 }]);

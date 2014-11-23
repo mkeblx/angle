@@ -1,7 +1,7 @@
 // app
 'use strict';
 
-var url = 'https://boiling-fire-3960.firebaseio.com';
+var url = 'https://angle-pm.firebaseio.com';
 
 var app = angular.module('angleApp', ['ngRoute','firebase']);
 
@@ -50,7 +50,7 @@ app.config(['$routeProvider','$locationProvider',
 
 
 app.factory('todos', ['$firebase', function($firebase){
-  var fireRef = new Firebase(url);
+  var fireRef = new Firebase(url+'/todos');
 
   var sync = $firebase(fireRef);
   return sync.$asArray();
