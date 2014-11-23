@@ -6,7 +6,7 @@ app.controller('ProjectCtrl',
 
     $scope.projects = $projects;
 
-    $scope.color = function(n){ return app.colors[n % app.colors.length-1]; };
+    $scope.color = function(n){ return app.colors[n % app.colors.length]; };
 
     $scope.addProject = function() {
       var name = $scope.projectName.trim();
@@ -36,6 +36,5 @@ app.controller('ProjectCtrl',
       project.name = newName;
       $scope.projects.$save(id);
     };
-
 
 }]);
