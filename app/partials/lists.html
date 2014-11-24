@@ -1,0 +1,21 @@
+<div id="lists" class="section" ng-controller="ListCtrl">
+  <div ng-repeat="(id, list) in list" class="list">
+    <a ng-href="/projects/{{ id }}">
+    <div class="content">
+      <div class="title">{{ project.name }}</div>
+      <div class="desc">{{ project.desc }}</div>
+      </div>
+    </div>
+    </a>
+  </div>
+
+  <div id="add-list-form">
+    <form ng-submit="addList()">
+      <input type="text" ng-model="listName" size="30"
+             placeholder="list name">
+      <input type="text" ng-model="listDesc" size="30"
+             placeholder="list description (optional)">
+      <input class="btn" type="submit" value="add">
+    </form>
+  </div>
+</div>

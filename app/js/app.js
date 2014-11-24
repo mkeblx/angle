@@ -63,6 +63,14 @@ app.factory('projects', ['$firebase', function($firebase){
   return sync.$asArray();
 }]);
 
+app.factory('lists', ['$firebase'], function($firebase){
+  var fireRef = new Firebase(url+'/lists');
+
+  var sync = $firebase(fireRef);
+  return sync.$asArray();
+});
+
+
 app.directive('packery', ['$rootScope', '$timeout',
   function($rootScope, $timeout) {
     return {

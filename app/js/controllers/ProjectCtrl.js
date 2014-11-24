@@ -18,13 +18,13 @@ app.controller('ProjectCtrl',
       var project = { name: name, desc: desc };
 
       $scope.projects.$add(project);
-      
+
       $scope.projectName = '';
       $scope.projectDesc = '';
     };
 
     $scope.removeProject = function(id) {
-    	$scope.projects.$remove(id);
+      $scope.projects.$remove(id);
     };
 
     $scope.editProject = function(id) {
