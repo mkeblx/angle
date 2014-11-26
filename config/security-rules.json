@@ -31,6 +31,19 @@
           ".validate": false
         }
       }
+    },
+    "lists": {
+      ".read": true,
+      ".write": true,
+      "$list": {
+        ".write": true,
+        "name": {
+          ".validate": "newData.isString() && newData.val().length <= 64 && newData.val().length > 0"
+        },
+        "desc": {
+          ".validate": "newData.isString()"
+        }
+      }
     }
   }
 }

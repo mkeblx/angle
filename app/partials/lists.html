@@ -1,9 +1,9 @@
-<div id="lists" class="section" ng-controller="ListCtrl">
+<div id="lists" class="page" class="section" ng-controller="ListCtrl">
   <div ng-repeat="(id, list) in list" class="list">
-    <a ng-href="/projects/{{ id }}">
+    <a ng-href="/lists/{{ id }}">
     <div class="content">
-      <div class="title">{{ project.name }}</div>
-      <div class="desc">{{ project.desc }}</div>
+      <div class="title">{{ list.name }}</div>
+      <div class="desc">{{ list.desc }}</div>
       </div>
     </div>
     </a>

@@ -27,20 +27,24 @@ app.slugify = function(str) {
 
 app.config(['$routeProvider','$locationProvider',
   function($routeProvider,$locationProvider) {
-    $routeProvider.
-      when('/projects', {
+    $routeProvider
+      .when('/projects', {
         templateUrl: 'partials/projects.html',
         controller: 'ProjectCtrl'
-      }).
-      when('/projects/:projectId', {
+      })
+      .when('/projects/:id', {
         templateUrl: 'partials/project.html',
         controller: 'ProjectViewCtrl'
-      }).
-      when('/todos', {
+      })
+      .when('/todos', {
         templateUrl: 'partials/todos.html',
         controller: 'TodoCtrl'
-      }).
-      otherwise({
+      })
+      .when('/lists', {
+        templateUrl: 'partials/lists.html',
+        controller: 'ListCtrl'
+      })
+      .otherwise({
         redirectTo: '/projects'
       });
 

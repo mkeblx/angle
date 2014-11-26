@@ -1,4 +1,4 @@
-@import url('//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+@import url('//fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700');
 @import url('//fonts.googleapis.com/css?family=Oswald:300,400,700');
 
 $width: 810px;
@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   margin: 0;
   padding: 20px;
@@ -32,6 +32,7 @@ a {
 #head {
 
   h1 {
+    font-family: 'Oswald', sans-serif;
     font-size: 34px;
     line-height: 34px;
     font-weight: 300;
@@ -89,96 +90,92 @@ a {
   &:hover {
     cursor: pointer;
     box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+
+    .corner {
+      cursor: pointer;
+
+      border-left-width: 35px;
+      border-top-width: 35px;
+    }
+  }
+
+  .title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #111;
+    margin-bottom: 10px;
+  }
+
+  .desc {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
   }
 
   .content {
     padding: 10px;
     height: 100%;
   }
-}
 
-.proj.u1 {
-  width: 150px;
-  height: 200px;
-}
+  &.u1 {
+    width: 150px;
+    height: 200px;
 
-.proj.u2 {
-  width: 225px;
-  height: 300px;
-}
-
-.proj.u3 {
-  width: 300px;
-  height: 400px;
-}
-
-.proj:hover .corner {
-  cursor: pointer;
-
-  border-left-width: 35px;
-  border-top-width: 35px;
-}
-
-.title {
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 24px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #111;
-  margin-bottom: 10px;
-}
-
-.desc {
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 300;
-  font-family: 'Roboto', sans-serif;
-}
-
-.u1 {
-  .title {
-    font-size: 18px;
-    line-height: 18px;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
+    .title {
+      font-size: 18px;
+      line-height: 18px;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+    .desc {
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
-  .desc {
-    font-size: 14px;
-    line-height: 18px;
+
+  &.u2 {
+    width: 225px;
+    height: 300px;
+
+    .title {
+      font-size: 22px;
+      line-height: 22px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    .desc {
+      font-size: 15px;
+      line-height: 21px;
+    }
+  }
+
+  &.u3 {
+    width: 300px;
+    height: 400px;
+  }
+
+  .corner {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-top-width: 20px;
+    border-top-style: solid;
+    float: right;
+
+    transition: border 0.3s ease-in;
   }
 }
 
-.u2 {
-  .title {
-    font-size: 22px;
-    line-height: 22px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-  }
-  .desc {
-    font-size: 15px;
-    line-height: 21px;
-  }
-}
-
-.corner {
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-top-width: 20px;
-  border-top-style: solid;
-  float: right;
-
-  transition: border 0.3s ease-in;
-}
 
 #add-project-form {
   margin-top: 10px;
 }
 
-/* project */
-
-.proj-page {
+.page {
   background-color: #fff;
   border: 1px solid #333;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
@@ -186,11 +183,20 @@ a {
 
   .content {
     margin: 10px;
+  }
+}
+
+/* project */
+
+.proj-page {
+
+  .content {
 
     h1 {
       margin: 0;
       margin-bottom: 10px;
 
+      font-family: 'Oswald', sans-serif;
       font-size: 26px;
       line-height: 26px;
       font-weight: 400;
@@ -216,12 +222,37 @@ a {
 
 }
 
+/* ^project */
+
+
+/* todos */
+
+ul.todos {
+  list-style-type: none;
+  padding-left: 10px;
+
+  li {
+
+    span {
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 300;
+    }
+
+  }
+
+}
+
+/* ^todos */
+
 /* buttons */
 
 .btn {
   border: 1px solid #ddd;
   background-color: #fff;
   border-radius: 3px;
+
+  font-family: 'Oswald', sans-serif;
   font-weight: 300;
 
   transition: background 0.3s ease-in;
@@ -247,6 +278,7 @@ a {
 .loading {
   margin-left: 3px;
   margin-bottom: 2px;
+  display: none
 }
 
 /* misc */
@@ -258,6 +290,10 @@ a {
 
 .pull-right { float: right; }
 .pull-left  { float: left;  }
+
+.show {
+  display: block;
+}
 
 .hide {
   display: none;

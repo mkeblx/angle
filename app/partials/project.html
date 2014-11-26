@@ -1,9 +1,9 @@
-<div class="proj-page" ng-controller="ProjectCtrl">
+<div class="proj-page page" ng-controller="ProjectViewCtrl">
 
   <div class="content">
+    <input class="btn pull-right" type="button" ng-click="editProject(id)" value="edit">
     <h1>{{ project.name }}</h1>
     <h2>{{ project.desc }}</h2>
-    <input class="btn" ng-click="editProject(projectId)" value="edit">
 
     <p>list of todos here</p>
   </div>
