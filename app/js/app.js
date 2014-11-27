@@ -3,79 +3,63 @@
 
 var url = 'https://angle-pm.firebaseio.com';
 
-var app = angular.module('angleApp', ['ngRoute','firebase']);
+angular.module('angleApp', [
+    'angleApp.config',
+    'angleApp.controllers',
+    'angleApp.routes',
+    'angleApp.services'
+  ]);
 
-app.colors = [
-  '#805056',
-  '#F16522',
-  '#FCBD54',
-  '#8DC63E',
-  '#84C780',
-  '#298ACA',
-  '#8772A5',
-  '#F072AB',
-  '#E44044'
-];
+angular.module('angleApp.config', [])
+  .constant('FBURL', 'https://angle-pm.firebaseio.com')
+  .constant('COLORS', [
+                        '#805056',
+                        '#F16522',
+                        '#FCBD54',
+                        '#8DC63E',
+                        '#84C780',
+                        '#298ACA',
+                        '#8772A5',
+                        '#F072AB',
+                        '#E44044'
+                      ]);
 
-app.slugify = function(str) {
+/*app.slugify = function(str) {
   var s =
     str.toLowerCase()
       .replace(/[^\w ]+/g,'')
       .replace(/ +/g,'-');
   return s;
-}
+}*/
+angular.module('angleApp.routes', ['ngRoute'])
+  .config(['$routeProvider','$locationProvider',
+    function($routeProvider,$locationProvider) {
+      $routeProvider
+        .when('/projects', {
+          templateUrl: 'partials/projects.html',
+          controller: 'ProjectCtrl'
+        })
+        .when('/projects/:id', {
+          templateUrl: 'partials/project.html',
+          controller: 'ProjectViewCtrl'
+        })
+        .when('/todos', {
+          templateUrl: 'partials/todos.html',
+          controller: 'TodoCtrl'
+        })
+        .when('/lists', {
+          templateUrl: 'partials/lists.html',
+          controller: 'ListCtrl'
+        })
+        .otherwise({
+          redirectTo: '/projects'
+        });
 
-app.config(['$routeProvider','$locationProvider',
-  function($routeProvider,$locationProvider) {
-    $routeProvider
-      .when('/projects', {
-        templateUrl: 'partials/projects.html',
-        controller: 'ProjectCtrl'
-      })
-      .when('/projects/:id', {
-        templateUrl: 'partials/project.html',
-        controller: 'ProjectViewCtrl'
-      })
-      .when('/todos', {
-        templateUrl: 'partials/todos.html',
-        controller: 'TodoCtrl'
-      })
-      .when('/lists', {
-        templateUrl: 'partials/lists.html',
-        controller: 'ListCtrl'
-      })
-      .otherwise({
-        redirectTo: '/projects'
-      });
-
-      $locationProvider.html5Mode(true);
-  }]);
-
-
-
-app.factory('todos', ['$firebase', function($firebase){
-  var fireRef = new Firebase(url+'/todos');
-
-  var sync = $firebase(fireRef);
-  return sync.$asArray();
-}]);
-
-app.factory('projects', ['$firebase', function($firebase){
-  var fireRef = new Firebase(url+'/projects');
-
-  var sync = $firebase(fireRef);
-  return sync.$asArray();
-}]);
-
-app.factory('lists', ['$firebase'], function($firebase){
-  var fireRef = new Firebase(url+'/lists');
-
-  var sync = $firebase(fireRef);
-  return sync.$asArray();
-});
+        $locationProvider.html5Mode(true);
+    }]);
 
 
-app.directive('packery', ['$rootScope', '$timeout',
+/*app.directive('packery', ['$rootScope', '$timeout',
   function($rootScope, $timeout) {
     return {
       restrict: 'A',
@@ -101,5 +85,5 @@ app.directive('packery', ['$rootScope', '$timeout',
     };
 
   }
-]);
+]);*/
 

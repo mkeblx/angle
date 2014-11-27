@@ -1,12 +1,13 @@
 'use strict';
 
-app.controller('ProjectCtrl',
-  ['$scope','$firebase','projects',
-  function($scope, $firebase, $projects) {
+angular.module('angleApp', ['angleApp.config'])
+  .controller('ProjectCtrl',
+  ['$scope','$firebase','projects', 'colors',
+  function($scope, $firebase, $projects, colors) {
 
     $scope.projects = $projects;
 
-    $scope.color = function(n){ return app.colors[n % app.colors.length]; };
+    $scope.color = function(n){ return colors[n % colors.length]; };
 
     $scope.addProject = function() {
       var name = $scope.projectName.trim();
