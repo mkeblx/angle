@@ -153,11 +153,31 @@ a {
 /* todos */
 ul.todos {
   list-style-type: none;
-  padding-left: 10px; }
-  ul.todos li span {
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 300; }
+  padding-left: 10px;
+  margin: 0; }
+  ul.todos li {
+    margin-bottom: 4px; }
+    ul.todos li span {
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 300; }
+    ul.todos li .link-btn {
+      display: none;
+      margin-left: 8px;
+      font-size: 12px;
+      line-height: 12px;
+      padding-bottom: 1px;
+      border-bottom: 1px solid #fff;
+      margin-top: 5px;
+      position: relative; }
+      ul.todos li .link-btn:hover {
+        cursor: pointer;
+        border-bottom-color: #333; }
+    ul.todos li:hover .link-btn {
+      display: inline; }
+
+#add-todo-container {
+  margin-top: 10px; }
 
 /* ^todos */
 /* buttons */

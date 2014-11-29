@@ -230,8 +230,10 @@ a {
 ul.todos {
   list-style-type: none;
   padding-left: 10px;
+  margin: 0;
 
   li {
+    margin-bottom: 4px;
 
     span {
       font-size: 16px;
@@ -239,8 +241,36 @@ ul.todos {
       font-weight: 300;
     }
 
+    .link-btn {
+      display: none;
+      margin-left: 8px;
+      font-size: 12px;
+      line-height: 12px;
+      padding-bottom: 1px;
+      border-bottom: 1px solid #fff;
+      margin-top: 5px;
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+        border-bottom-color: #333;
+      }
+    }
+
+    &:hover {
+
+      .link-btn {
+        display: inline;
+      }
+
+    }
+
   }
 
+}
+
+#add-todo-container {
+  margin-top: 10px;
 }
 
 /* ^todos */

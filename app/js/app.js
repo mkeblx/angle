@@ -31,6 +31,7 @@ angular.module('angleApp.config', [])
       .replace(/ +/g,'-');
   return s;
 }*/
+
 angular.module('angleApp.routes', ['ngRoute'])
   .config(['$routeProvider','$locationProvider',
     function($routeProvider,$locationProvider) {
