@@ -44,12 +44,16 @@ angular.module('angleApp.controllers', ['firebase.utils'])
   }])
 
   //
-  .controller('ProjectViewCtrl', ['$scope','$routeParams','fbutil','projects',
-    function($scope, $routeParams, fbutil, $projects) {
+  .controller('ProjectViewCtrl', ['$scope','$routeParams','fbutil','projects', 'todos',
+    function($scope, $routeParams, fbutil, projects, todos) {
 
     $scope.projectId = $routeParams.id;
 
-    $scope.project = $projects[$scope.projectId];
+    $scope.projects = projects;
+
+    $scope.project = projects[$scope.projectId];
+
+    $scope.todos = todos; // tmp, limit to project
 
     $scope.editProject = function() {
       var project = $scope.project;
@@ -106,9 +110,9 @@ angular.module('angleApp.controllers', ['firebase.utils'])
 
   //
   .controller('TodoCtrl', ['$scope','fbutil','todos',
-    function($scope, fbutil, $todos) {
+    function($scope, fbutil, todos) {
 
-    $scope.todos = $todos;
+    $scope.todos = todos;
 
     //$todos.$bindTo($scope, '_todos');
 
@@ -133,7 +137,7 @@ angular.module('angleApp.controllers', ['firebase.utils'])
       var text = todo.text.trim();
 
       var newText = window.prompt('New todo text: ', text);
-      if (!newText.length)
+      if (newText && !newText.length)
         return;
 
       todo.text = newText;
