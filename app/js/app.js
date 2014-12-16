@@ -2,13 +2,24 @@
 'use strict';
 
 angular.module('angleApp', [
+    'ngResource',
     'angleApp.config',
     'angleApp.filters',
     'angleApp.controllers',
     'angleApp.routes',
     'angleApp.services',
     'angleApp.directives'
-  ]);
+  ])
+  .config(function($httpProvider){
+    $httpProvider.interceptors.push('httpInterceptor');
+
+    var f = function(data, headersGetter) {
+      $('.loading').show();
+      return data;
+    };
+
+    $httpProvider.defaults.transformRequest.push(f);
+  })
 
 angular.module('angleApp.config', [])
   .constant('FBURL', 'https://angle-pm.firebaseio.com')
@@ -24,6 +35,7 @@ angular.module('angleApp.config', [])
       '#F072AB',
       '#E44044'
     ]);
+
 
 /*app.directive('packery', ['$rootScope', '$timeout',
   function($rootScope, $timeout) {
