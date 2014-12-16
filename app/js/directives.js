@@ -5,6 +5,9 @@ angular.module('angleApp.directives', [])
     return {
       restrict: 'AE',
       replace: true,
+      /*scope: {
+      	todos: '='
+      },*/
       templateUrl: 'partials/todo-list.html'
     };
   });

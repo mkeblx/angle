@@ -3,6 +3,7 @@
 
 angular.module('angleApp', [
     'angleApp.config',
+    'angleApp.filters',
     'angleApp.controllers',
     'angleApp.routes',
     'angleApp.services',
@@ -11,25 +12,18 @@ angular.module('angleApp', [
 
 angular.module('angleApp.config', [])
   .constant('FBURL', 'https://angle-pm.firebaseio.com')
-  .constant('COLORS', [
-                        '#805056',
-                        '#F16522',
-                        '#FCBD54',
-                        '#8DC63E',
-                        '#84C780',
-                        '#298ACA',
-                        '#8772A5',
-                        '#F072AB',
-                        '#E44044'
-                      ]);
-
-/*app.slugify = function(str) {
-  var s =
-    str.toLowerCase()
-      .replace(/[^\w ]+/g,'')
-      .replace(/ +/g,'-');
-  return s;
-}*/
+  .constant('COLORS',
+    [
+      '#805056',
+      '#F16522',
+      '#FCBD54',
+      '#8DC63E',
+      '#84C780',
+      '#298ACA',
+      '#8772A5',
+      '#F072AB',
+      '#E44044'
+    ]);
 
 /*app.directive('packery', ['$rootScope', '$timeout',
   function($rootScope, $timeout) {
