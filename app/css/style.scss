@@ -2,6 +2,7 @@
 @import url('//fonts.googleapis.com/css?family=Oswald:300,400,700');
 
 $width: 810px;
+$screen-sm-min: 768px;
 
 html {
   box-sizing: border-box;
@@ -16,7 +17,6 @@ body {
   font-weight: 500;
   margin: 0;
   padding: 20px;
-  min-width: 850px;
 }
 
 a {
@@ -25,8 +25,14 @@ a {
 }
 
 #container {
-  width: 810px;
+  width: 400px;
   margin: 0 auto;
+}
+
+@media (min-width: $screen-sm-min) {
+  #container {
+    width: 810px;
+  }
 }
 
 #head {
@@ -61,9 +67,14 @@ a {
   outline: 1px solid #ddd;
   position: relative;
   background-color: #f5f5f5;
-  width: 810px;
-  min-height: 1000px;
+  min-height: 600px;
   padding: 10px;
+}
+
+@media (min-width: $screen-sm-min) {
+  #main-container {
+
+  }
 }
 
 /* projects */
@@ -122,8 +133,12 @@ a {
   }
 
   &.u1 {
-    width: 150px;
-    height: 200px;
+    width: 46%;
+    height: 190px;
+
+    @media (min-width: $screen-sm-min) {
+      width: 18%;
+    }
 
     .title {
       font-size: 18px;

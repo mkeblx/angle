@@ -10,16 +10,19 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   margin: 0;
-  padding: 20px;
-  min-width: 850px; }
+  padding: 20px; }
 
 a {
   text-decoration: none;
   color: #000; }
 
 #container {
-  width: 810px;
+  width: 400px;
   margin: 0 auto; }
+
+@media (min-width: 768px) {
+  #container {
+    width: 810px; } }
 
 #head h1 {
   font-family: 'Oswald', sans-serif;
@@ -41,9 +44,10 @@ a {
   outline: 1px solid #ddd;
   position: relative;
   background-color: #f5f5f5;
-  width: 810px;
-  min-height: 1000px;
+  min-height: 600px;
   padding: 10px; }
+
+@media (min-width: 768px) { }
 
 /* projects */
 #projects {
@@ -84,8 +88,11 @@ a {
     padding: 10px;
     height: 100%; }
   .proj.u1 {
-    width: 150px;
-    height: 200px; }
+    width: 46%;
+    height: 190px; }
+    @media (min-width: 768px) {
+      .proj.u1 {
+        width: 18%; } }
     .proj.u1 .title {
       font-size: 18px;
       line-height: 18px;

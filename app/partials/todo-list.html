@@ -1,6 +1,4 @@
 <div>
-  <span>{{remaining()}} of {{todos.length}} remaining</span>
-  [ <a href="" ng-click="archive()">archive</a> ]
   <ul class="todos">
     <li ng-repeat="(id, todo) in todos | orderByDone">
       <input type="checkbox" ng-model="todo.done" ng-change="toggleCompleted(id)">
